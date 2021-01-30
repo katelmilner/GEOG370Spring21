@@ -6,25 +6,60 @@
     <title>Projections</title>
 </head>
 <body>
-    <h1>In this project I learned how to display images in different projections</h1>
+    <h1>World Projection Maps</h1>
     
-    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
+    <h2 style="color:red">How the maps were created in QGIS</h2>
+    <p>First, in QGIS, I opened the shape file from the natural earth data in the world projections folder downloaded from Sakai. Then, I clicked on "Project" and then "Properities" which opened the window where you can apply different map projections. For each map projection, after applying it to the existing data from natural earth, I clicked the indicatrix mapper plugin and then "Run" to apply the indicatrices. Then, I right clicked and selected "Properities" on each layer and changed the colors, so they were the same for each map projection. Lastly, for each projection, I clicked "Project", then "New Print Layout", named the file, clicked "Add a new map to the layout", and exported the file as a png. </p>
     
     <h2>WGS84 Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is a compromise projection which does not perfectly maintain shape or size but balances out the distortions of both. The indicatrices become both bigger and more elliptical towards the poles from the equator. </h3>
     <a href=".//maps/4326.png">
     <img src=".//maps/4326.png" alt="WGS84" width='500px'>
     </a>
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is also a compromise projection which does not perfectly conserve size or shape but balances out the distortions of both. The indicatrices get bigger and more elliptical in all directions from the intersection of the equator and the prime meridian. </h3>
     <a href=".//maps/54043.png">
     <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
     </a>
-    <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
-    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
+    <h2>Psuedo Mercator Projection</h2>
+    <h3>This projection is a conformal projection which generally perserves shape and angles but distorts size. The indicatrices all remain circles, but they get larger towards the poles from the equator. </h3>
+    <a href="./maps/3857_psuedo_mercator.png">
+    <img src="./maps/3857_psuedo_mercator.png" alt="3857" width='500px'>
+    </a>
+    <h2>Cylindrical Equal Area Projection</h2>
+    <h3>This projection is an equal area or equivalent projection which maintain area or size but distorts shape. The indicatrices are the same area, but the shape becomes much more elliptical towards the poles from the equator. </h3>
+    <a href="./maps/Cylindrical_equal_area_54034.png">
+    <img src="./maps/Cylindrical_equal_area_54034.png" alt="54034" width='500px'>
+    </a>
+    <h2>Equidistant Conic Projection</h2>
+    <h3>This projection is an equidistant projection which perserves distance but distorts size and shape. The indicatrices become larger and more elliptical towards the South Pole from the North Pole.  </h3>
+    <a href="./maps/Equisdiant_conic_54027.png">
+    <img src="./maps/Equisdiant_conic_54027.png" alt="54027" width='500px'>
+    </a>
+    <h2>Winkel I Projection</h2>
+    <h3>This projection is a compromise projection which balances the distortions of size and shape instead of trying to perserve one or the other. The indicatrices remain largely the same at the equator but become bigger and more elliptical in the polar regions. </h3>
+    <a href="./maps/winkel_I_53018.png">
+    <img src="./maps/winkel_I_53018.png" alt="53018" width='500px'>
+    </a>
+    <h2>North Pole Azimuthal Projection</h2>
+    <h3>This projection is an azimuthal projection which maintains direction and distance from a central point, in this case the North Pole, but distorts size and shape. The indicatrices distort in size and shape getting bigger and wider from the North Pole to the South Pole. </h3>
+    <a href="./maps/North_pole_azimuthal_equisdant_102016.png">
+    <img src="./maps/North_pole_azimuthal_equisdant_102016.png" alt="102016" width='500px'>
+    </a>
+    <h2>Gall Stereographic Projection</h2>
+    <h3>This projection is a compromise projection which does not fully maintain size or shape but aims to balance out the distortions. The indicatrices remain the same along the equator but get larger and wider towards the poles.</h3>
+    <a href="./maps/Gall_stereographic.png">
+    <img src="./maps/Gall_stereographic.png" alt="53016" width='500px'>
+    </a>
+    <h2>Mollweide Projection</h2>
+    <h3>This projection is an equal area projection which maintains area while distorting shape. The indicatrices stay the same area or size, but their shape is distorted particularly in the polar regions.</h3>
+    <a href="./maps/Mollweide_projection.png">
+    <img src="./maps/Mollweide_projection.png" alt="54009" width='500px'>
+    </a>
+    <h2 style="color:red"><u></u></h2>
+    <h3></h3>
     <p></p>
-    <h2>Data used for this project</h2>
+    <h2>Data used for this project:</h2>
     <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
 </body>
 </html>
