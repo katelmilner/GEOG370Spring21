@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+   <script src = "./Data/old_well_4326.geojson"></script>
+   <script src = "./Data/carolina_inn_4326.geojson"></script>
+   <script src = "./Data/planetarium_4326.geojson"></script>
+
+</head>
+<body>
+
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900px; height: 500px;}
+    </style>
+
+    <script>
+        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map)
+
+
+
+            // L.geoJSON(uncwell).addTo(map)
+
+            var uncIcon = L.icon({
+            iconUrl: 'https://faopharmacy.unc.edu/wp-content/uploads/sites/200/2018/04/Old-Well-Icon-Example.png',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+            });
+
+            var customPopup = "Old Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>";
+
+
+            // L.geoJSON(planetarium).addTo(map)
+            var planetIcon = L.icon({
+            iconUrl: 'https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg',
+            iconSize: [70,50],
+            popupAnchor: [0,0]
+            });
+
+            var planetPopup = "Morehead Planetarium<br/><img src='https://unchistory.web.unc.edu/wp-content/uploads/sites/14033/2015/12/Morehead-aerial.jpg'width='100px'/>";
+
+
+            //L.geoJSON(carolinainn).addTo(map)
+
+            var innIcon = L.icon({
+            iconUrl: 'https://dh-prod-cdn.azureedge.net/-/media/property/destination-hotels/carolina-inn/1200x800/crossroadschapelhill_exterior_front-porch-crpd1200x800.jpg?ts=64d7f917-f481-4874-b534-2b8060777ada',
+            iconSize: [70,50],
+            popupAnchor: [0,0]
+            });
+
+            var innPopup = "Carolina Inn<br/><img src='https://move.unc.edu/wp-content/uploads/sites/248/2014/11/carolinainn-feat.jpg'width='100px'/>";
+
+
+            // L.geoJSON(stadium).addTo(map)
+
+            var stadiumIcon = L.icon({
+            iconUrl: 'https://images-na.ssl-images-amazon.com/images/I/81TXEv2ZswL._AC_SX355_.jpg',
+            iconSize: [70,50],
+            popupAnchor: [0,0]
+            });
+
+            var stadiumPopup = "Kenan Memorial Stadium<br/><img src='https://chapelboromedia.s3.amazonaws.com/uploads/2019/07/17141334/Kenan-Stadium-2-1200x640.png'width='100px'/>";
+
+        L.geoJSON(uncwell, { // a
+        pointToLayer: function (feature, latlng) { // b
+        return L.marker(latlng, {icon: uncIcon});}}) // c
+        .bindPopup(customPopup) // d
+        .addTo(map); //
+
+        L.geoJSON(carolinainn, { // a
+        pointToLayer: function (feature, latlng) { // b
+        return L.marker(latlng, {icon: innIcon});}}) // c
+        .bindPopup(innPopup) // d
+        .addTo(map); //
+
+        L.geoJSON(planetarium, { // a
+        pointToLayer: function (feature, latlng) { // b
+        return L.marker(latlng, {icon: planetIcon});}}) // c
+        .bindPopup(planetPopup) // d
+        .addTo(map); //
+
+        L.geoJSON(stadium, { // a
+        pointToLayer: function (feature, latlng) { // b
+        return L.marker(latlng, {icon: stadiumIcon});}}) // c
+        .bindPopup(stadiumPopup) // d
+        .addTo(map); //
+    </script>
+
+    
+</body>
+</html>

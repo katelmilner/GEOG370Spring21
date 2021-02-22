@@ -1,0 +1,31 @@
+var uncwell = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "unc well" }, "geometry": { "type": "Point", "coordinates": [ -79.0512352278691, 35.912064676772367 ] } }
+]
+}
+
+var planetarium = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "planetarium" }, "geometry": { "type": "Point", "coordinates": [ -79.05062, 35.91385 ] } }
+]
+}
+
+var carolinainn = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "carolina inn" }, "geometry": { "type": "Point", "coordinates": [ -79.05431, 35.90968 ] } }
+]
+}
+
+var stadium = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "stadium" }, "geometry": { "type": "Point", "coordinates": [ -79.04811, 35.90716 ] } }
+]
+}
