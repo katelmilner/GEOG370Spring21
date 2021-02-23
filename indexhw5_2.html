@@ -74,6 +74,12 @@
 
             var stadiumPopup = "Kenan Memorial Stadium<br/><img src='https://chapelboromedia.s3.amazonaws.com/uploads/2019/07/17141334/Kenan-Stadium-2-1200x640.png'width='100px'/>";
 
+            var latlngs = [
+                [35.912064, -79.051235],
+                [35.91385, -79.05062]
+                ];
+            var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+            
         L.geoJSON(uncwell, { // a
         pointToLayer: function (feature, latlng) { // b
         return L.marker(latlng, {icon: uncIcon});}}) // c
