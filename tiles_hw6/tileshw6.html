@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([36.0735888590157, -79.08812412894366], 14.0);
+
+      var CorbintonIcon = L.icon({
+            iconUrl: 'https://pics.freeicons.io/uploads/icons/png/5205410931579605509-512.png',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+            });
+
+      var CorbintonPopup = "Corbinton Active Adult Community. Corbinton is a newly built 55 and above active adult community in Hillsborough. This housing development is one of the many new developments that have been built in Hillsborough in the recent years. The Corbinton Community is in an area that in the 2002 aerial image of Hillsborough was previously all woods. Although there is certainly still a lot of green space and parks in Hillsborough, the increasing development and population is also present and on trend with the increasing population in the greater Triangle area.<br/><img src='https://blueheeldevelopment.com/wp-content/uploads/2020/05/corbinton.jpg'width='250px'/>";
+
+      var marker1 = L.marker([36.0813945,-79.0913083],{
+        icon:CorbintonIcon,
+        pointTolayer:function(feature,latlng){
+          return L.marker(latlng);}})
+          .bindPopup(CorbintonPopup)
+          .addTo(map);
+
+      var DukeIcon = L.icon({
+            iconUrl: 'https://cdn.icon-icons.com/icons2/1465/PNG/512/588hospital_100778.png',
+            iconSize: [50,50],
+            popupAnchor: [0,0]
+            });
+
+      var DukePopup = "Duke Urgent Care Hillsborough. Along with increasing numbers of residential developments, Hillsborough has also seen more commercial development in the recent years. This Duke Urgent Care is now in the place of a different building that was in the 2002 aerial image of Hillsborough. Although it is not in this image, there is also a fairly new Hillsborough Campus of UNC Hospitals which is currently undergoing expansion. Both of these hospitals indicate the increasing population of the local area and the increased space Hillsborough has to grow.<br/><img src='https://www.dukehealth.org/sites/default/files/locations/hillsborough_1281x263_2x.jpg'width='300px'/>";
+
+      var marker2 = L.marker([36.0648261,-79.0996677],{
+        icon:DukeIcon,
+        pointTolayer:function(feature,latlng){
+          return L.marker(latlng);}})
+          .bindPopup(DukePopup)
+          .addTo(map);
+
+      var WeaverIcon = L.icon({
+          iconUrl: 'https://www.weaverstreetmarket.coop/wp-content/uploads/2018/04/VisualID-Full-Logo_RGB.png',
+          iconSize: [50,50],
+          popupAnchor: [0,0]
+          });
+
+      var WeaverPopup = "Weaver Street Market. Weaver Street Market is a co-op grocery store which focuses on selling natural, organic, fair trade, and local foods. The first one was in Carrboro, and then they expanded to have stores in Southern Village and Hillsborough. The Hillsborough one was also built around 2007 which is much newer than I thought. Much like the Weaver Street in Carrboro, the Hillsborough Weaver Street is one of the central points of Downtown Hillsborough and the go to hang out and meet up spot.<br/><img src='https://www.weaverstreetmarket.coop/wp-content/uploads/2015/03/hillsborough-2020.jpg'width='300px'/>";
+
+      var marker3 = L.marker([36.0735192,-79.1008402],{
+        icon:WeaverIcon,
+        pointTolayer:function(feature,latlng){
+          return L.marker(latlng);}})
+          .bindPopup(WeaverPopup)
+          .addTo(map);
+
+      var OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	      maxZoom: 19,
+	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+
+      var Hillsborough = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      })
+
+      var Tiles = {
+        "Open Street Map": OpenStreetMap,
+        "Hillsborough Photo": Hillsborough
+      }
+
+      var Vectors = {
+        "Corbinton Neighborhood":marker1,
+        "Duke Urgent Care Hillsborough":marker2,
+        "Weaver Street Hillsborough":marker3
+      }
+
+      L.control.layers(Tiles, Vectors).addTo(map);
+  </script>
+</body>
+</html>
