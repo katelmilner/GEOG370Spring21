@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Ratios and Categories</title>
+</head>
+<body>
+    <h1>Homework 8: Census Data Ratios and Categories</h1>
+    
+    <h2>Kate Milner</h2>
+    <p>For my ratio, I divded the number of households with grandchildren by the total number of households in each county. I then mulitplied that number by 1000 because multiplying by just 100 left out a lot of detail. Because the unit of my data was households, it made sense to make a ratio from the total number of households rather than the total population.</p>
+
+    <h2>Natural Breaks</h2>
+    <p>Natural breaks are best for data is that not evenly distributed but also not skewed towards one end or the other. However, the cons of natural breaks are that it can create classes with widely varying number ranges, and it can be difficult to compare with other maps using natural breaks as the class ranges are specific to the dataset. While the natural breaks with my data do make widely varying class ranges - for example the range of the first class is 5 while the range of the second class is 27 - I think it does a good job of displaying the data because the data is not evenly distributed but also not skewed.</p>
+    
+    <a href=".//ma_hw8_naturalbreaks.png">
+    <img src=".//ma_hw8_naturalbreaks.png" alt="WGS84" width='600px'>
+    </a>
+    
+    <p></p>
+
+    <h2>Equal Interval</h2>
+    <p>Equal intervals are best to create legends that are easy to read and present to a general audience. However, the con is that most data values may fall into one or two classes. I think equal intervals also does a good job at displaying this data because the data is dispersed enough that most of the data does not end up in one or two classes, and the legend is easy to interpret. Only one county is in a different class compared to the natural breaks map.</p>
+    
+    <a href=".//ma_hw8_equalinterval.png">
+    <img src=".//ma_hw8_equalinterval.png" alt="WGS84" width='600px'>
+    </a>
+    
+    <p></p>
+
+    <h2>Quantiles</h2>
+    <p>Quantiles are great for emphasizing the relative position of data values, but data values placed in the same class can have widely differing values or values with small range differences can be placed in different classes. This can happen particularly if the data is not evenly distributed across the range. I think quantiles probably does the least good job at displaying this data because, particularly in the first class, data with very different values are in the same class. In the first class, the range is from 0-31, but one county has a value of 5 and all the other counties in that class have values of above 20. In this map, about half of the counties are in different classes compared to the two previous maps.</p>
+    
+    <a href=".//ma_hw8_quartiles.png">
+    <img src=".//ma_hw8_quartiles.png" alt="WGS84" width='600px'>
+    </a>
+    
+    <p></p>
+    
+</body>
+</html>
