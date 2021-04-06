@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoprocessing Analysis</title>
+</head>
+<body>
+    <h1>Homework 10: Geoprocessing Analysis</h1>
+    
+    <h2>Kate Milner</h2>
+    <p>This is a map of food deserts in Native American reservations in Oklahoma in an Oklahoma State Plane projection EPSG 102724. This map answers the questions of are there food deserts on Native American reservations in Oklahoma and if so, what areas of the reservations are food deserts? To make this map, I found a dataset from the USDA about food deserts in the US. I cleaned the dataset and joined it with a shapefile of Census tracts in Oklahoma from the Census website. I selected only the Census tracts with food deserts, exported those features, and dissolved the Census tracts. Then, I found a shapefile of Native American reservations in the US from the Census. I used the intersect feature to find the intersection of Native American reservations in Oklahoma and food deserts in Oklahoma. Lastly, I selected only the Native Americans reservations in Oklahoma and deleted the rest.</p>
+    
+    <a href=".//oklahoma_fooddeserts.png">
+    <img src=".//oklahoma_fooddeserts.png" alt="WGS84" width='700px'>
+    </a>
+    
+    <p></p>
+    <h2>Data used for this project</h2>
+    <a href="./oklahoma.csv"> Cleaned Food Desert CSV Dataset </a>
+    <p></p>
+    <a href="https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data/"> Source of Food Desert CSV Data </a>
+    <p></p>
+    <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html"> Source of Oklahoma Census Tract Shapefile </a>
+    <p></p>
+    <a href="https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/"> Source of Native American Reservations Shapefile </a>
+</body>
+</html>
